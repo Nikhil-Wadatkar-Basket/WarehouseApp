@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function EmployeeList() {
     const [employees, setEmployees] = useState([]);
+    const nav=useNavigate();
 
     useEffect(() => {
         getEmployees()
@@ -60,6 +62,9 @@ export default function EmployeeList() {
 
             </table>
             </div>
+            <Link to={"/"}>Dashboard</Link>
+            <button onClick={()=>nav(-1)}>Go Back Home</button>
+
 
         </div>
     );
